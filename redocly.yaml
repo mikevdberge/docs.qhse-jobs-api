@@ -1,0 +1,8 @@
+specFileName: ../qhse-jobs-api/reference/qhse-jobs-api.json
+apiTitle: QHSE Jobs API
+splitSpec: false
+codeSamples: true
+swaggerUI: false
+travis: true
+repo: mikevdberge/docs.qhse-jobs-api
+oasVersion: 3.0.0

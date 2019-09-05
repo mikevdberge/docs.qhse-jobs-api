@@ -4,7 +4,6 @@
 
 ## Links
 - Documentation (ReDoc): https://mikevdberge.github.io/docs.qhse-jobs-api/
-- SwaggerUI: https://mikevdberge.github.io/docs.qhse-jobs-api/swagger-ui/
 - Download the full specification:
     + JSON https://mikevdberge.github.io/docs.qhse-jobs-api/openapi.json
     + YAML (https://mikevdberge.github.io/docs.qhse-jobs-api/openapi.yaml

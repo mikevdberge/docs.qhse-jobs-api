@@ -10,6 +10,6 @@
     "start": "swagger-repo serve",
     "build": "swagger-repo build -o web_deploy",
     "test": "swagger-repo validate",
-	"gh-pages": "gh-pages -d web_deploy"
+    "gh-pages": "gh-pages -d web_deploy"
   }
 }

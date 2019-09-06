@@ -8,17 +8,18 @@ env:
 deploy:
   matrix:
   - skip_cleanup: true
-    provider: script
-    script: npm run build && npm run gh-pages
-    on:
-      branch: master
-    provider: pages
+      provider: pages
+    edge: true
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
     keep_history: true
     local_dir: ./web_deploy
     on:
         branch: master      
+    provider: script
+    script: npm run build && npm run gh-pages
+    on:
+      branch: master
   - skip_cleanup: true
     provider: script
     script: npm run build && npm run gh-pages -- -p "$TRAVIS_BRANCH"

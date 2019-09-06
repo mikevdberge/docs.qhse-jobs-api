@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "swagger-repo": "^2.0.0-rc.15",
+    "deploy-to-gh-pages": "^1.1.0",
     "gh-pages": "^1.0.0"
   },
   "private": true,
@@ -10,6 +11,7 @@
     "start": "swagger-repo serve",
     "build": "swagger-repo build -o web_deploy",
     "test": "swagger-repo validate",
+    "deploy": "npm run build && deploy-to-gh-pages --update web_deploy",
     "gh-pages": "gh-pages -d web_deploy"
   }
 }

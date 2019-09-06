@@ -11,14 +11,6 @@ env:
 deploy:
   matrix:
   - skip_cleanup: true
-      provider: pages
-    edge: true
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-    keep_history: true
-    local_dir: ./web_deploy
-    on:
-        branch: master      
     provider: script
     script: npm run build && npm run gh-pages
     on:

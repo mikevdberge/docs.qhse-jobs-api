@@ -1,0 +1,286 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "QHSE Jobs is a simple API allowing consumers to view Jobs.\nThe QHSE Jobs API is organized around REST. Our API has predictable, resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\n",
+    "version": "v1",
+    "title": "QHSE Jobs API",
+    "contact": {
+      "email": "info@qhse-professionals.nl",
+      "url": "info@qhse-professionals.nl"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags": [
+    {
+      "name": "Jobs",
+      "description": "Everything about your QHSE Jobs.",
+      "externalDocs": {
+        "description": "Find out more about our Jobs API",
+        "url": "https://qhseprofessionals.docs.apiary.io/#"
+      }
+    }
+  ],
+  "paths": {
+    "/jobs/{id}": {
+      "get": {
+        "summary": "Info for a specific job",
+        "operationId": "showJobById",
+        "tags": [
+          "Jobs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The id of the job to retrieve",
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1449
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json; charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/jobs/list": {
+      "get": {
+        "summary": "List all available jobs",
+        "operationId": "listJobs",
+        "tags": [
+          "Jobs"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/healthcheck": {
+      "get": {
+        "summary": "Information about the health status of the API in RFC Health Check format",
+        "security": [],
+        "tags": [
+          "Health Check"
+        ],
+        "responses": {
+          "200": {
+            "description": "Server is up and running",
+            "content": {
+              "application/json; charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthCheck"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Something is wrong"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Information about the health status of the API in Microprofile format",
+        "security": [],
+        "tags": [
+          "Health Check"
+        ],
+        "responses": {
+          "200": {
+            "description": "Server is up and running",
+            "content": {
+              "application/json; charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthCheck"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Something is wrong"
+          }
+        }
+      }
+    },
+    "/hc": {
+      "get": {
+        "summary": "Information about the health status of the API in Microsoft format",
+        "security": [],
+        "tags": [
+          "Health Check"
+        ],
+        "responses": {
+          "200": {
+            "description": "Server is up and running",
+            "content": {
+              "application/json; charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthCheck"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Something is wrong"
+          }
+        },
+        "x-code-samples": [
+          {
+            "lang": "PHP",
+            "source": "$form = new \\API\\Entities\\Echo();\n$form->setMessage(\"Hello World!\");\ntry {\n    $pet = $client->echo()->post($form);\n} catch (UnprocessableEntityException $e) {\n    var_dump($e->getErrors());\n}\n"
+          }
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://qhse-professionals.nl/wp-json/qhsejobs/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "api_key",
+        "in": "query"
+      }
+    },
+    "schemas": {
+      "Job": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": 1449
+          },
+          "name": {
+            "type": "string",
+            "example": "Aankomend Manager VKAM / SHEQ (BRZO)"
+          },
+          "published": {
+            "type": "string",
+            "description": "0 = Job is not published, 1 = Job is published",
+            "example": 1
+          },
+          "active": {
+            "type": "string",
+            "description": "Job status in EazyMatch",
+            "example": 1
+          },
+          "startdate": {
+            "type": "string",
+            "example": "2019-06-18"
+          },
+          "enddate": {
+            "type": "string",
+            "example": "2019-06-18"
+          },
+          "created": {
+            "type": "string",
+            "example": "2019-06-18 09:13:27"
+          },
+          "datemodified": {
+            "type": "string",
+            "example": "2019-07-04 12:16:27"
+          },
+          "startpublished": {
+            "type": "string",
+            "example": "2019-07-03 17:02:00"
+          },
+          "deadline": {
+            "type": "string",
+            "example": null
+          },
+          "endpublished": {
+            "type": "string",
+            "example": null
+          },
+          "applicants": {
+            "type": "string",
+            "example": 1
+          },
+          "hours": {
+            "type": "string",
+            "example": "0.00"
+          },
+          "description": {
+            "type": "string",
+            "example": "Voor een BRZO bedrijf in de omgeving Eindhoven zoeken wij een Aankomend Manager VKAM."
+          },
+          "comment": {
+            "type": "string",
+            "example": ""
+          },
+          "dateindexed": {
+            "type": "string",
+            "example": "2019-07-04 12:16:27"
+          }
+        }
+      },
+      "HealthCheck": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "pass"
+          },
+          "version": {
+            "type": "string",
+            "example": "v1"
+          },
+          "releaseid": {
+            "type": "string",
+            "example": "1.0.0"
+          },
+          "output": {
+            "type": "string",
+            "example": "Error connecting to EazyMatch"
+          },
+          "description": {
+            "type": "string",
+            "example": "Healthcheck of the QHSE Jobs API service"
+          },
+          "memory": {
+            "type": "string",
+            "example": 33.21
+          },
+          "cpu": {
+            "type": "string",
+            "example": 35
+          }
+        }
+      }
+    }
+  }
+}

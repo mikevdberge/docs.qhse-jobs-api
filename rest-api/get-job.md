@@ -1,6 +1,6 @@
-# QHSE REST API
+# GET Job
 
-{% api-method method="get" host="https://qhse-professionals.nl" path="/wp-json/qhsejobs/v1/job/:jobid" %}
+{% api-method method="get" host="https://qhse-professionals.nl" path="/wp-json/v1/jobs/:id" %}
 {% api-method-summary %}
 Get Job
 {% endapi-method-summary %}
@@ -12,8 +12,8 @@ This endpoint allows you to get free cakes.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="jobid" type="string" %}
-ID of the job to get.
+{% api-method-parameter name="id" type="string" %}
+ID of the job to get, for free of course.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -64,18 +64,5 @@ Could not find a cake matching this query.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-[![Build Status](https://circleci.com/gh/mikevdberge/qhse-jobs-api/tree/master.svg?style=shield&circle-token=a2c6f7ffef5ccf3e9a7982c14b945f583f89c072)](https://circleci.com/gh/mikevdberge/qhse-jobs-api/tree/master)[!API Status](https://img.shields.io/uptimerobot/status/m783115057-d310c118d45e6c2dec230ad0.svg)
 
-## API Description
-
-### [API Blueprint](http://apiblueprint.org/)
-
-* Document: [apiary.apib](https://github.com/mikevdberge/qhse-jobs-api/tree/51ad04a95024b758368831c179db648e3d713417/apiary.apib)
-* Dredd configuration: [dredd.yml](https://github.com/mikevdberge/qhse-jobs-api/tree/51ad04a95024b758368831c179db648e3d713417/dredd.yml)
-
-## CI Status
-
-| CI | Configuration | Status |
-| :--- | :--- | :--- |
-| [CircleCI](https://circleci.com/) | [.circleci/config.yml](https://github.com/mikevdberge/qhse-jobs-api/tree/51ad04a95024b758368831c179db648e3d713417/.circleci/config.yml) | [![](https://circleci.com/gh/mikevdberge/qhse-jobs-api/tree/master.svg?style=svg&circle-token=a2c6f7ffef5ccf3e9a7982c14b945f583f89c072)](https://circleci.com/gh/mikevdberge/qhse-jobs-api) |
 

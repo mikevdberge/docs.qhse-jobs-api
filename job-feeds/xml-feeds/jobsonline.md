@@ -8,6 +8,10 @@ description: Linkedin XML Feed
 
 **Website: https://www.jobsonline.nl/**
 
+****
+
+<table><thead><tr><th>Field</th><th>Description</th><th data-type="checkbox">Mandatory</th><th>Type</th></tr></thead><tbody><tr><td>employerkey</td><td></td><td>true</td><td></td></tr><tr><td>id</td><td></td><td>true</td><td></td></tr><tr><td>producttype</td><td></td><td>true</td><td></td></tr><tr><td>title</td><td></td><td>false</td><td></td></tr><tr><td>careerlevels</td><td></td><td>false</td><td></td></tr><tr><td><strong>   </strong>careerlevel</td><td></td><td>false</td><td></td></tr><tr><td>educations</td><td></td><td>false</td><td></td></tr><tr><td>   education</td><td></td><td>false</td><td></td></tr><tr><td>functiongroups</td><td></td><td>false</td><td></td></tr><tr><td>   functiongroup</td><td></td><td>false</td><td></td></tr><tr><td>industries</td><td></td><td>false</td><td></td></tr><tr><td>   industry</td><td></td><td>false</td><td></td></tr><tr><td>employmentcontracts</td><td></td><td>false</td><td></td></tr><tr><td>   employmentcontract</td><td></td><td>false</td><td></td></tr><tr><td>workinghours</td><td></td><td>false</td><td></td></tr><tr><td>   workinghour</td><td></td><td>false</td><td></td></tr><tr><td>salarylevel</td><td></td><td>false</td><td></td></tr><tr><td>visibility</td><td></td><td>false</td><td></td></tr><tr><td>    visibilitytype</td><td></td><td>false</td><td></td></tr><tr><td>   country</td><td></td><td>false</td><td></td></tr><tr><td>   city</td><td></td><td>false</td><td></td></tr><tr><td>keywords</td><td></td><td>false</td><td></td></tr><tr><td>   keyword</td><td></td><td>false</td><td></td></tr><tr><td>startdatetext</td><td></td><td>false</td><td></td></tr><tr><td>startdate</td><td></td><td>false</td><td></td></tr><tr><td>introtext</td><td></td><td>false</td><td></td></tr><tr><td>description</td><td></td><td>false</td><td></td></tr><tr><td>applylink</td><td></td><td>false</td><td></td></tr><tr><td>trackingpixelurl</td><td></td><td>false</td><td></td></tr></tbody></table>
+
 ### Voorbeeld XML-bestand
 
 _Onderaan dit document vindt u een voorbeeld XML-bestand zonder commentaar_

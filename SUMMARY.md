@@ -22,3 +22,8 @@
 
 * [Getting Started](rest-api/getting-started-with-qhse-professionals-api.md)
 * [GET Job](rest-api/get-job.md)
+
+***
+
+* [Jobfeed](jobfeed/README.md)
+  * [Jobsonline](jobfeed/jobsonline.md)

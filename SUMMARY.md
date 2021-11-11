@@ -26,4 +26,6 @@
 ***
 
 * [Jobfeed](jobfeed/README.md)
-  * [Jobsonline](jobfeed/jobsonline.md)
+  * [Jobsonline](jobfeed/jobsonline/README.md)
+    * [Get City](jobfeed/jobsonline/get-city.md)
+    * [Get Education](jobfeed/jobsonline/get-education.md)

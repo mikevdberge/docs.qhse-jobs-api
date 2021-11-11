@@ -1,0 +1,560 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Jobsonline API",
+    "version": "0.0.2",
+    "contact": {
+      "name": "Mike van den Berge",
+      "email": "mikevdberge@qhse-professionals.nl"
+    },
+    "description": "The Jobsonline API returns detailed information cities, educations",
+    "x-logo": "https://www.patrickvanbemmelen.nl/storage/2020/11/DefenderForOffice365-1.png",
+    "termsOfService": "https://jobfeed.qhse-professionals.nl/api/jobsonline/",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://jobfeed.qhse-professionals.nl/api/jobsonline/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://jobfeed.qhse-professionals.nl/api/jobsonline",
+      "description": "Production"
+    },
+    {
+      "url": "http://localhost:443/api/jobsonline",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://staging.qhse-professionals.nl/api/jobsonline",
+      "description": "Staging"
+    },
+    {
+      "url": "https://jobfeed.azure-api.net/api/jobsonline",
+      "description": "API Gateway"
+    }
+  ],
+  "paths": {
+    "/city": {
+      "parameters": [],
+      "get": {
+        "summary": "Get City",
+        "tags": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/city"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "operationId": "get-jobsonline-city",
+        "description": "Get Jobsonline city information",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "name",
+            "description": "The Name of the city parameter filters the results by the city name"
+          }
+        ],
+        "security": [
+          {
+            "Subscription-key-header": []
+          }
+        ]
+      }
+    },
+    "/education": {
+      "parameters": [],
+      "get": {
+        "summary": "Get Education",
+        "tags": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/education"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "operationId": "get-jobsonline-education",
+        "description": "Get Jobsonline education information",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "name",
+            "description": "The Name of the education parameter filters the results by the education name"
+          }
+        ],
+        "security": [
+          {
+            "Subscription-key-header": []
+          }
+        ]
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Get health",
+        "tags": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/health"
+          }
+        },
+        "operationId": "get-health",
+        "description": "Get health status"
+      }
+    },
+    "/health/live": {
+      "get": {
+        "summary": "Get health live",
+        "tags": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/live"
+          }
+        },
+        "operationId": "get-health-live",
+        "description": "Get health live status"
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "summary": "Get health ready",
+        "tags": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ready"
+          }
+        },
+        "operationId": "get-health-ready",
+        "description": "Get health ready status"
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "Subscription-key-header": {
+        "name": "Ocp-Apim-Subscription-Key",
+        "type": "apiKey",
+        "in": "header",
+        "description": "APIM Subscription key"
+      },
+      "Subscription-key-query": {
+        "type": "apiKey",
+        "in": "query",
+        "name": "subscription-key"
+      }
+    },
+    "responses": {
+      "city": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "country": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "municipality": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "province": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "_id",
+                "id",
+                "name",
+                "country",
+                "municipality",
+                "province"
+              ],
+              "x-examples": {
+                "example-1": {
+                  "_id": "616f2ae7200301aae4c44339",
+                  "id": "2300",
+                  "name": "Delft",
+                  "country": "1",
+                  "municipality": "380",
+                  "province": "12"
+                }
+              }
+            },
+            "examples": {
+              "City": {
+                "$ref": "#/components/examples/City"
+              }
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
+      },
+      "education": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "_id",
+                "id",
+                "name"
+              ],
+              "x-examples": {
+                "example-1": {
+                  "_id": "6171889e8afb239a655381ff",
+                  "id": "3",
+                  "name": "HBO"
+                }
+              }
+            },
+            "examples": {
+              "Education": {
+                "$ref": "#/components/examples/Education"
+              }
+            }
+          }
+        }
+      },
+      "health": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "checks": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "name",
+                      "state"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "reason": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "reason"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "status",
+                "checks"
+              ],
+              "x-examples": {
+                "example-1": {
+                  "status": "UP",
+                  "checks": [
+                    {
+                      "name": "PingCheck HEAD:jobfeed.qhse-professionals.nl:80/",
+                      "state": "UP",
+                      "data": {
+                        "reason": ""
+                      }
+                    },
+                    {
+                      "name": "LivenessCheck",
+                      "state": "UP",
+                      "data": {
+                        "reason": ""
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "examples": {
+              "Health example": {
+                "$ref": "#/components/examples/Health"
+              }
+            }
+          }
+        }
+      },
+      "live": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "checks": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "name",
+                      "state"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "reason": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "reason"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "status",
+                "checks"
+              ],
+              "x-examples": {
+                "example-1": {
+                  "status": "UP",
+                  "checks": [
+                    {
+                      "name": "LivenessCheck",
+                      "state": "UP",
+                      "data": {
+                        "reason": ""
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "examples": {
+              "live-example": {
+                "$ref": "#/components/examples/Live"
+              }
+            }
+          }
+        }
+      },
+      "ready": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "checks": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "name",
+                      "state"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "state": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "reason": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "reason"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "status",
+                "checks"
+              ],
+              "x-examples": {
+                "example-1": {
+                  "status": "UP",
+                  "checks": [
+                    {
+                      "name": "PingCheck HEAD:jobfeed.qhse-professionals.nl:80/",
+                      "state": "UP",
+                      "data": {
+                        "reason": ""
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "examples": {
+              "Ready example": {
+                "$ref": "#/components/examples/ready"
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {},
+    "examples": {
+      "City": {
+        "value": {
+          "_id": "616f2ae7200301aae4c439fe",
+          "id": "1845",
+          "name": "Assendelft",
+          "country": "1",
+          "municipality": "297",
+          "province": "8"
+        }
+      },
+      "Education": {
+        "value": {
+          "_id": "6171889e8afb239a655381ff",
+          "id": "3",
+          "name": "HBO"
+        }
+      },
+      "Health": {
+        "value": {
+          "status": "UP",
+          "checks": [
+            {
+              "name": "PingCheck HEAD:jobfeed.qhse-professionals.nl:80/",
+              "state": "UP",
+              "data": {
+                "reason": ""
+              }
+            },
+            {
+              "name": "LivenessCheck",
+              "state": "UP",
+              "data": {
+                "reason": ""
+              }
+            }
+          ]
+        }
+      },
+      "Live": {
+        "value": {
+          "status": "UP",
+          "checks": [
+            {
+              "name": "LivenessCheck",
+              "state": "UP",
+              "data": {
+                "reason": ""
+              }
+            }
+          ]
+        }
+      },
+      "ready": {
+        "value": {
+          "status": "UP",
+          "checks": [
+            {
+              "name": "PingCheck HEAD:jobfeed.qhse-professionals.nl:80/",
+              "state": "UP",
+              "data": {
+                "reason": ""
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "x-logo": "https://qhse-professionals.nl/wp-content/uploads/QHSE-Professionals-icon.jpg.webp"
+}

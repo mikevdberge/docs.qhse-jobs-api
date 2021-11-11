@@ -1,5 +1,5 @@
 # Jobsonline
 
-{% swagger src="https://jobfeed.qhse-professionals.nl/schema.json" path="undefined" method="undefined" %}
-[https://jobfeed.qhse-professionals.nl/schema.json](https://jobfeed.qhse-professionals.nl/schema.json)
+{% swagger src="../.gitbook/assets/schema.json" path="undefined" method="undefined" %}
+[schema.json](../.gitbook/assets/schema.json)
 {% endswagger %}

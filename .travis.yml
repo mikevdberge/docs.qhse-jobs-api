@@ -5,16 +5,16 @@ env:
   global:
   - secure: Ji9kHPJgFX7b3vGhkOuBcn7xIWJLilvZ7phIvjepb3RuAsBnXaMTROINMc0I7LsEyS8A8NWKKnj1yXJ5pi79PS2R1fBD+tlumryqB8moNWZObMC8bImIuakeUnMST5UD6lqDc5x8bi6Klpjs5Gr6vNoI7u8GCv3KK8xMGLfTraQFTR2tGthJNNSHNTdW1cmuoa2cgC/dZmfKo9HVTajzmwxNPsmMsgZFgDIzCJQaKSyZFEFt6m1PzbiYehEafMJiDny1+kmgGoiOchJjSn7JekvQb6w11VMTfSMd8E7NSUeXe3/b+W5sFdL+gT/zhiZ+J6SFQqZ4RqBBcuKKehTevr8e62fBYY+40awTHk/drnRFrKBWYHHUVuqJYM6U7dayRdLHKy++UwtaZUlKbP7itSETDyaVt+GmUFd6rwh8e+Xf1ZcM0MmNAubNbfwl29nWOYAqlHOUQkAID4gVy3wew/XA5EsYwjlgzSBTTUf1+bJm3vApK87FAaAv8lglryG5FyQZHKL0k7HpPhqB2jSQyRyPpcKmED95SyIbuFoM5auyCGMwoabomievVWdyXb6U12ejRtgFc3tD4zSBpluoxfDeKDmTCrBHuTsxrfNOWN9+tQ4EfWNTB+RIqr2SpyWU5f08hwqtxbecWQuatPwo6hKaoXFZ2SgLOtCMI58tzFA=
   - secure: vrFDnQLPpZSuniZXxWVd3d/R/CFNF/Xr0vaYtKE35gtZ9hVix68L4bVmaLj6xqWuJa2hEqoNZB5O+Q59lC1Jjw3w1YGsYvH/0GAaJiJrX15oIAX0vEELDOiC/EizmYkRt3jI2ns3f1aAPUa/fK3ZVjHo8eYOyyC+yL8Izwme1xZ1DEDOAbJ6Dny+Ze5eQWSceuUKv+w8hNKoPQPP/Ck+Yj0YUqoClOcb54q48YdmY6SjAUGRcqW1tS7uhqND4gZoVRDNiM4o6UXb7AJrypLEIyCPpBKCqpdS+6B5qwK4Ayc9fegxSLkSa4Whjk9SK0UwL4hnOjfJT8a2WYG0lomosZ1etz26zUD0izFU8M0FKJMQYVYyUl0OGarLvaClT9CmVXKu1Hi/fqxTBmXK/QUFZ17bij2g6MMPtS5r3fM7TNEOjCirtMpHDUoljS6dX3zDaJhoGCxF0VDVPd/WFWY9NIhCFzmlPo/nvhrG1phffXtUqeW7ac4XO4rQ3iHmQJtgRV87l4Umrp5SHldCEwaTKiN/JTAsfQaKlftU4cuAg6iITxd3T9mHqcZIotQLISJkpY3smzu1hCw48i+7/dyoqPF+FkBFdioIgJkEM2jYsndrA9am05l+TuaXn2lG0vw7FM1mpOet9excWLr1CP0oFzyMX5qMlST0AN++oxrjCwQ=
-
+  - secure: ahOqretxT5IQjz4uGnGAvNrmyD/z3CK6J0yp3TtdVVx2usikO5N02Cl70dE7fZim3/6tvkD/BoX+RvJipx9/tsi2cUGlvK10RRMN5143JC4cn/uQMSh0H676ewHXAu8umQ7MQE15QWUJqKGmERP9jML09h5EA3PS7np47fQyNlc2+s1VsaH+iI3G62EM9g0SDtgMR+lBNAtbuZZpxxen5rfpb9dRTEFvesry81AI5yJDMeZuHJNyMLy9814t7c19cdLbf52E5RMLqbz3ht6RlgvFssWTkS/8CdJE7NvBWWImF0yjMOvS10d8LFB5tcfl/ur+QW708Wy/wMau1OuGd83rNxq3B1SLrZW37nIon02cporO9VBh4u+EMUKXLOeDRJ1mekztwQQpkFZyG+SlwLNcFstn5n6GXoGQ+HtoY4iZWbqEz2igtTr9hfk33q18JfzC/qJJXyYhQEXeDgZeEeYdffNtqdta8Yf+v+J6DPNjmIcOjkNJDMYdxQbg5bgOKVBKiGjX4g9kxf7UnJgL1Qx2rCL2dS77+Ba2VKzkmSN3/ZFSc/4fTVQAkazwi9tWKuvC+beHOv/yMDNZTVRnYycd+spUupICjRr1f28cLtCneYzreMm4Ce8iJLS/uFu/ruTGhAw45hkjNaKO8j/SOh/nTqFU/djy7Rynepl3mIU=
 deploy:
-  - skip_cleanup: true
-    provider: script
-    script: npm run deploy
-    on:
-      branch: master
-  - skip_cleanup: true
-    provider: script
-    script: npm run deploy-branch
-    on:
-      all_branches: true
-      condition: '"$TRAVIS_BRANCH" != "master" && "$TRAVIS_BRANCH" != "gh-pages"'
+- skip_cleanup: true
+  provider: script
+  script: npm run deploy
+  on:
+    branch: master
+- skip_cleanup: true
+  provider: script
+  script: npm run deploy-branch
+  on:
+    all_branches: true
+    condition: '"$TRAVIS_BRANCH" != "master" && "$TRAVIS_BRANCH" != "gh-pages"'
